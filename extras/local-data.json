@@ -5,21 +5,28 @@
       "name": "Asparagus steak",
       "description": "Nice and healthy steak.",
       "price": 120.5,
-      "imageUrl": "http://localhost:30000/images/asparagus-steak.png"
+      "imageUrl": "http://localhost:3000/images/asparagus-steak.png"
     },
     {
       "id": 2,
       "name": "Healthy pizza",
       "description": "Mega pizza.",
       "price": 90,
-      "imageUrl": "http://localhost:30000/images/healthy-pizza.png"
+      "imageUrl": "http://localhost:3000/images/healthy-pizza.png"
     },
     {
       "id": 3,
-      "name": "Salad",
-      "description": "Very healthy.",
+      "name": "Big burger",
+      "description": "Meat and cheese.",
       "price": 80.5,
-      "imageUrl": "http://localhost:30000/images/asparagus-steak.png"
+      "imageUrl": "http://localhost:3000/images/big-burger.png"
+    },
+    {
+      "id": 4,
+      "name": "Salomon",
+      "description": "The best fish on the planet.",
+      "price": 11.5,
+      "imageUrl": "http://localhost:3000/images/salmon-teriyaki-fish.png"
     }
   ],
   "orders": [
