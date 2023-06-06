@@ -9,3 +9,16 @@ Content-Type: application/json
   "price": 80.5,
   "imageUrl": "https://github.com/landrzejewski/cookbook-react-native/blob/main/extras/images/asparagus-steak.png?raw=true"
 }
+
+###
+
+POST https://blog-images.loca.lt/upload
+Content-Type: multipart/form-data; boundary=WebAppBoundary
+Accept: application/json
+
+--WebAppBoundary
+Content-Disposition: form-data; name="photo"; filename="cover.jpg"
+Content-Type: image/jpeg
+
+< ./assets/profile.png
+--WebAppBoundary--

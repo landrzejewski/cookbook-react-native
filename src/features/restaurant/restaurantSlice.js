@@ -22,7 +22,8 @@ export default restaurantSlice.reducer;
 
 export const loadMenuItems = () => async (dispatch) => {
   loadMenuItemsFromDatabase((menuItems) => dispatch(refreshMenuItems(menuItems)));
-  const response = await axios.get("https://raw.githubusercontent.com/landrzejewski/cookbook-react-native/main/extras/food-data.json");
+  //const response = await axios.get("https://raw.githubusercontent.com/landrzejewski/cookbook-react-native/main/extras/food-data.json");
+  const response = await axios.get("http://localhost:3000/menu-items");
   dispatch(refreshMenuItems(response.data));
   saveMenuItemsToDatabase(response.data);
 };
