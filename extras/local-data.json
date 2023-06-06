@@ -12,7 +12,7 @@
       "name": "Healthy pizza",
       "description": "Mega pizza.",
       "price": 90,
-      "imageUrl": "http://localhost:30000images/healthy-pizza.png"
+      "imageUrl": "http://localhost:30000/images/healthy-pizza.png"
     },
     {
       "id": 3,

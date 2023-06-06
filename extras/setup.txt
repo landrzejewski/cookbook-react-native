@@ -1,2 +1,4 @@
 npm install -g json-server
 json-server local-data.json
+npm install -g localtunnel
+lt --port 3000 -s food-app
