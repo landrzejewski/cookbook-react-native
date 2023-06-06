@@ -6,27 +6,27 @@ import MenuScreen from "./src/features/restaurant/MenuScreen";
 import OrderScreen from "./src/features/restaurant/OrderScreen";
 import ProfileScreen from "./src/features/profile/ProfileScreen";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { ShoppingBagIcon, UserIcon } from "react-native-heroicons/outline";
+import { ListBulletIcon, ShoppingBagIcon, UserIcon } from "react-native-heroicons/outline";
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
 
-const FoodStack = () => (
+const FoodStack = ({ navigation }) => (
   <Stack.Navigator>
-    <Stack.Screen name="MenuScreen" component={MenuScreen} options={{ title: "Menu" }} />
+    <Stack.Screen name="MenuScreen" component={MenuScreen} options={{ title: "Menu", headerRight: () => <ShoppingBagIcon onPress={() => navigation.navigate('OrderScreen')}/>  }} />
     <Stack.Screen name="OrderScreen" component={OrderScreen} options={{ title: "Order" }} />
   </Stack.Navigator>
 );
 
 const ProfileStack = () => (
   <Stack.Navigator>
-    <Stack.Screen name="ProfileScreen" component={ProfileScreen} options={{ title: "Profile" }} />
+    <Stack.Screen name="ProfileScreen" component={ProfileScreen} options={{ title: "Profile"}}/>
   </Stack.Navigator>
 );
 
 const getColor = (isFocused) => isFocused ? '#4775f2' : '#b8bece';
 
-const foodTab = ({focused}) => <ShoppingBagIcon style={{color: getColor(focused)}}/>;
+const foodTab = ({focused}) => <ListBulletIcon style={{color: getColor(focused)}}/>;
 
 const profileTab = ({focused}) => <UserIcon style={{color: getColor(focused)}}/>;
 

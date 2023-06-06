@@ -1,0 +1,25 @@
+{
+  "menuItems": [
+    {
+      "id": 1,
+      "name": "Asparagus steak",
+      "description": "Nice and healthy steak.",
+      "price": 120.5,
+      "imageUrl": "https://github.com/landrzejewski/cookbook-react-native/blob/main/extras/images/asparagus-steak.png?raw=true"
+    },
+    {
+      "id": 2,
+      "name": "Healthy pizza",
+      "description": "Mega pizza.",
+      "price": 90,
+      "imageUrl": "https://github.com/landrzejewski/cookbook-react-native/blob/main/extras/images/healthy-pizza.png?raw=true"
+    },
+    {
+      "id": 3,
+      "name": "Salad",
+      "description": "Very healthy.",
+      "price": 80.5,
+      "imageUrl": "https://github.com/landrzejewski/cookbook-react-native/blob/main/extras/images/asparagus-steak.png?raw=true"
+    }
+  ]
+}

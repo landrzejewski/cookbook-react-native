@@ -1,0 +1,11 @@
+POST http://localhost:3000/menuItems
+Accept: application/json
+Content-Type: application/json
+
+{
+  "id": 3,
+  "name": "Salad",
+  "description": "Very healthy.",
+  "price": 80.5,
+  "imageUrl": "https://github.com/landrzejewski/cookbook-react-native/blob/main/extras/images/asparagus-steak.png?raw=true"
+}
