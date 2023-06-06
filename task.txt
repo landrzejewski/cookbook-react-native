@@ -1,0 +1,4 @@
+- uzupełnić/ostylować widok menu tak, żeby pokazywać image, name, description, price
+- dodać przycisk (na menu item) dodający dane jedzie do zamówienia
+- na zakładce order pokazać dodane produkty (name, price), dodać przycisk zamów, który wyśle postem dane zamówienia na server
+(całość zrealizować w oparciu o Redux/store)
