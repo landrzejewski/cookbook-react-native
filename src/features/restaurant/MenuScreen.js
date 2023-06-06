@@ -4,7 +4,9 @@ const MenuScreen = ({ navigation }) => {
     return (
       <View>
         <Text>Home</Text>
-        <Button title="Order" onPress={() => navigation.navigate('OrderScreen')}/>
+        <Button title="Order" onPress={() => {
+          navigation.navigate('OrderScreen')}
+        }/>
       </View>
     );
 }

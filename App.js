@@ -35,8 +35,8 @@ function App() {
     <Provider store={store}>
       <NavigationContainer>
         <Tab.Navigator screenOptions={{headerShown: false}}>
-          <Tab.Screen name="FoodStack" component={FoodStack} options={{tabBarIcon: foodTab}} />
-          <Tab.Screen name="ProfileStack" component={ProfileStack} options={{tabBarIcon: profileTab}}/>
+          <Tab.Screen name="Menu" component={FoodStack} options={{tabBarIcon: foodTab}} />
+          <Tab.Screen name="Profile" component={ProfileStack} options={{tabBarIcon: profileTab}}/>
         </Tab.Navigator>
       </NavigationContainer>
     </Provider>
