@@ -1,10 +1,11 @@
-import { Image, StyleSheet, TouchableOpacity } from "react-native";
-import { launchCamera, launchImageLibrary } from "react-native-image-picker";
+import { Image, Platform, StyleSheet, TouchableOpacity } from "react-native";
+import { launchImageLibrary } from "react-native-image-picker";
 import { useState } from "react";
+import axios from "axios";
 
 export default (props) => {
 
-  const [image, setImage] = useState(null);
+  const [imageUri, setImageUri] = useState(null);
 
   const selectPhotoFromLibrary = async () => {
     const result = await launchImageLibrary({
@@ -12,18 +13,36 @@ export default (props) => {
       mediaType: 'photo'
     });
     if (!result.didCancel) {
-      setImage(result);
+      const uri = result.assets[0].uri;
+      setImageUri(uri);
+      await uploadPhoto(uri);
     }
+  };
 
+  const uploadPhoto = async (uri) => {
+    const form = new FormData();
+    console.log('Uploading photo');
+    form.append('photo', {
+      uri: Platform.OS === 'android' ? uri : uri.replace('file://', ''),
+      name: 'photo.jpg',
+      type: 'image/jpg',
+    });
+    const result = await axios.postForm('https://food-images.loca.lt/upload', form);
+    /*form.append('photo', { type: 'image/jpeg', name: 'photo.jpg', uri: Platform.OS === 'android' ? uri : uri.replace('file://', '') });
+    const result = await fetch('https://food-images.loca.lt/upload', {
+      method: 'POST',
+      body: form
+    });*/
+    console.log(result.data);
   };
 
   return (
     <TouchableOpacity onPress={selectPhotoFromLibrary}>
       {
-        image && <Image style={styles.image} source={{uri: image.assets[0].uri}}/>
+        imageUri && <Image style={styles.image} source={{uri: imageUri}}/>
       }
       {
-        !image && <Image style={styles.image} source={require('../../../assets/profile.png')}/>
+        !imageUri && <Image style={styles.image} source={require('../../../assets/profile.png')}/>
       }
     </TouchableOpacity>
   )
